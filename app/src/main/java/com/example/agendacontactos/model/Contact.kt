@@ -1,8 +1,13 @@
 package com.example.agendacontactos.model
 
+import android.os.Parcelable
+
+
 typealias Contacts = ArrayList<Contact>
 
+
 data class Contact (
+    val id: Int,
     val name: String,
     val last_name: String,
     val company: String,

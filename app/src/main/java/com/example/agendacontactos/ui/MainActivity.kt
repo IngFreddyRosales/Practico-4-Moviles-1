@@ -27,34 +27,12 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-//        binding.btnContactManage.setOnClickListener {
-//            switchtoContactManagement()
-//        }
-
-        setupRecyclerView()
-        setupViewModelOberservers()
-        viewModel.loadContacts()
-    }
-
-    private fun setupViewModelOberservers() {
-        viewModel.contacts.observe(this){
-            val adapter = binding.rvContactListMain.adapter as ContactAdapter
-            adapter.updateData(it)
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, ContactListFragment())
+                .commit()
         }
     }
 
-    private fun setupRecyclerView(){
-        binding.rvContactListMain.apply {
-            adapter = ContactAdapter(
-                listOf()
-            )
-            layoutManager = LinearLayoutManager(this@MainActivity)
-        }
-    }
-
-//    private fun switchtoContactManagement(){
-//        supportFragmentManager.beginTransaction()
-//            .replace(R.id.btnContactManage, ContactManagement())
-//            .commit()
-//    }
 }
+

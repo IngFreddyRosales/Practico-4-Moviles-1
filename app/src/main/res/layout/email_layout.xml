@@ -7,22 +7,20 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
 
-
-
-        <!-- RecyclerView para mostrar los emails -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvEmails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <!-- Botón para añadir nuevo email -->
         <Button
             android:id="@+id/btnAddEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
+            android:layout_marginTop="10dp"
             android:backgroundTint="#4CAF50"
             android:text="Añadir Email" />
     </LinearLayout>
